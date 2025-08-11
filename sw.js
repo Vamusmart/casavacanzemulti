@@ -1,6 +1,6 @@
 const CACHE_NAME = "static-cache-v1";
 const ASSETS_TO_CACHE = [
-    "/website/main.js",
+    "/main.js",
     "/css/style.css",
     "/images/banner-carrers-1440.webp",
     "/images/banner-we-are-1440.webp",

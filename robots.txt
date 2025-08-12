@@ -1,4 +1,7 @@
 User-agent: *
+Allow: /favicon-192x192.png
+Allow: /favicon.ico
+
 Disallow:
 
-Sitemap: https://www.intimogavini.it/sitemap.xml
+Sitemap: https://intimogavini.it/sitemap.xml

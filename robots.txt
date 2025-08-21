@@ -4,4 +4,4 @@ Allow: /favicon.ico
 
 Disallow:
 
-Sitemap: https://intimogavini.it/sitemap.xml
+Sitemap: https://www.intimogavini.it/sitemap.xml

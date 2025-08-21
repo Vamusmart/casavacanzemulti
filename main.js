@@ -9,7 +9,7 @@ const cookieStorage = {
     return cookies[item];
   },
   setItem: (item, value) => {
-    document.cookie = `${item}=${value};path=/;`;
+    document.cookie = `${item}=${value}; path=/; SameSite=None; Secure`;
   },
 };
 
@@ -216,4 +216,4 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-///// Sw.js start ////
+///// Sw.js ends ////

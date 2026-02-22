@@ -159,8 +159,15 @@ header .logo {
   object-fit: contain;
   display: block;
   padding-top: 1rem;
-  margin-bottom: 1.5rem; /* Aggiunta di margin oppure paddinginferiore per evitare sovrapposizione con il testo */
-}
+  margin-bottom: 1.5rem;
+    /* Aggiunta di margin oppure paddinginferiore per evitare sovrapposizione con il testo */
+  }
+  
+  header .logo img {
+    width: 170px;
+    height: auto;
+    object-fit: contain;
+  }
 
 header .logo span {
   color: var(--black);
@@ -593,7 +600,7 @@ img {
 
 .container-ajx {
   font-size: 1.5rem;
-  max-width: 90%;
+  max-width: 95%;
   margin: auto;
   line-height: 1.5;
   padding: 5rem;

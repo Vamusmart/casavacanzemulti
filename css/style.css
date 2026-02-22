@@ -155,7 +155,7 @@ header .logo {
   font-size: 2rem;
   color: var(--red);
   height: auto;
-  max-height: 8vh; /* oppure 100px, da adattare */
+  max-height: 7rem; /* oppure 100px, da adattare */
   object-fit: contain;
   display: block;
   padding-top: 1rem;

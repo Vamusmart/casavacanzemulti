@@ -600,7 +600,7 @@ img {
   background: var(--black);
   color: transparent;
   color: var(--white);
-  font-size: 7rem;
+  font-size: 6.5rem;
   line-height: 6.5rem;
   padding: 0 5rem 2rem 5rem;
 }

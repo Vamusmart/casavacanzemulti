@@ -140,35 +140,60 @@ const isNotEmpty = (value) => {
 // Check if a string is an email
 const isEmail = (email) => {
   let regex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
   return regex.test(String(email).toLowerCase());
 };
 
-// Field validation function
+// Messages per language
+const messages = {
+  it: {
+    success: "Grazie per il messaggio.",
+    error: "Ricontrolla la tua email e il tuo messaggio"
+  },
+  en: {
+    success: "Thank you for your message.",
+    error: "Please check your email and message."
+  },
+  es: {
+    success: "Gracias por tu mensaje.",
+    error: "Por favor revisa tu correo y mensaje."
+  },
+  de: {
+    success: "Danke für deine Nachricht.",
+    error: "Bitte überprüfe deine E-Mail/Nachricht."
+  },
+  fr: {
+    success: "Merci pour votre message.",
+    error: "Veuillez vérifier votre email/message."
+  }
+};
 
-const error_message = document.getElementById("error_message");
+// Field validation function
+const display_message = document.getElementById("display_message");
+
 const fieldValidation = (field, validationFunction) => {
   if (field == null) return false;
 
   let isFieldValid = validationFunction(field.value);
+
+  // Get current language from <html lang="xx">
+  const currentLang = document.documentElement.lang || "en";
+
   if (!isFieldValid) {
-    text = "Please Enter valid Email and Message";
-    display_message.innerHTML = text;
+    display_message.innerHTML = messages[currentLang]?.error || messages['en'].error;
+    field.style.borderColor = "red";
   } else {
-    field.className = "";
+    field.style.borderColor = "";
   }
 
   return isFieldValid;
 };
 
-// combine all the checks for email and message
-
+// Combine all the checks for email and message
 const isValid = () => {
   let valid = true;
-
   valid &= fieldValidation(fields.email, isEmail);
   valid &= fieldValidation(fields.message, isNotEmpty);
-
   return valid;
 };
 
@@ -182,20 +207,16 @@ class User {
   }
 }
 
-//Sending the contact form data with JavaScript
+// Sending the contact form data with JavaScript
 const sendContact = () => {
-  if (isValid()) {
-    let usr = new User(email.value, message.value);
+  const currentLang = document.documentElement.lang || "en";
 
-    text = "Grazie per il messaggio.";
-    display_message.innerHTML = text;
-    document.getElementById("email").style.display = "none";
-    document.getElementById("message").style.display = "none";
-  } else {
-    text = "Ricontrolla la tua email e il tuo messaggio";
-    display_message.innerHTML = text;
-    document.getElementById("email").style.borderColor = "red";
-    document.getElementById("message").style.borderColor = "red";
+  if (isValid()) {
+    let usr = new User(fields.firstName.value, fields.lastName.value, fields.email.value, fields.message.value);
+
+    display_message.innerHTML = messages[currentLang]?.success || messages['en'].success;
+    fields.email.style.display = "none";
+    fields.message.style.display = "none";
   }
 };
 

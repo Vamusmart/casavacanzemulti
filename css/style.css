@@ -222,7 +222,7 @@ header label {
 .nav-links {
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  width: 50%;
 }
 
 .nav-links li {

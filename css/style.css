@@ -450,6 +450,7 @@ a.active {
 
 .text .titolo-stile {
   color: var(--black) !important;
+  font-size: 6rem;
 }
 
 .text .testo-stile {

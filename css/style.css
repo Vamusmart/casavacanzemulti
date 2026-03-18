@@ -702,7 +702,7 @@ img {
 .mainajx {
   flex-shrink: 0;
   flex-basis: 70%;
-  height: 42rem;
+  min-height: 42rem;
   background-color: var(--white);
 }
 

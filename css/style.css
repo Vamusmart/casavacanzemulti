@@ -317,7 +317,7 @@ a.active {
  *  COOKIE
  */
 
-#consent-popup {
+/* #consent-popup {
   position: fixed;
   bottom: 0;
   left: 10rem;
@@ -327,6 +327,30 @@ a.active {
   transition: opacity 2s ease;
   font-size: var(--font-normal);
   text-align: center;
+} */
+
+#consent-popup {
+  position: fixed;
+  bottom: 0;
+  left: 10rem;
+  right: 10rem;
+  padding: 1rem;
+  background-color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#consent-popup p {
+  width: auto;
+  flex: 1;
+}
+
+.item {
+  position: static; /* 🔥 fondamentale */
+  width: auto;
+  margin-left: 1rem;
 }
 
 #consent-popup.hidden {
@@ -352,11 +376,11 @@ a.active {
   width: 80%;
 }
 
-#consent-popup p {
+/* #consent-popup p {
   width: 80%;
-}
+} */
 
-.item {
+/* .item {
   position: absolute;
   height: 50px;
   line-height: 50px;
@@ -368,7 +392,7 @@ a.active {
   width: 20%;
   font-weight: bold;
   text-align: center;
-}
+} */
 
 .item:hover {
   color: var(--lightblue);
@@ -1208,7 +1232,7 @@ h2 {
 
   .home .content p,
   .home .content .text p {
-    font-size: calc(var(--font-normal) + 0.5rem);
+    font-size: calc(var(--font-normal) + 1.2rem);
   }
 
   .mySlides {
@@ -1238,7 +1262,7 @@ h2 {
   }
 
   #consent-popup {
-    font-size: calc(var(--font-normal) + 1rem);
+    font-size: calc(var(--font-normal) + 0.5rem);
     padding: 1rem 1rem;
   }
 
@@ -1423,7 +1447,6 @@ h2 {
   }
 
   #consent-popup {
-    font-size: var(--font-normal);
     text-align: justify;
   }
 
@@ -1477,10 +1500,6 @@ h2 {
 
   .nav-links a {
     font-size: calc(var(--font-normal) + 0.4rem);
-  }
-
-  #consent-popup {
-    font-size: var(--font-normal);
   }
 
   #accept {

@@ -1311,6 +1311,11 @@ h2 {
   width: 68%;
 }
 
+  .home .content p,
+  .home .content .text p {
+    font-size: calc(var(--font-normal) + 0.5rem);
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -1566,17 +1571,12 @@ h2 {
     }
 
     h2 {
-    font-size: calc(var(--font-normal) + 1rem);
+    font-size: calc(var(--font-normal) + 0.6rem);
     }
 
     #wedo .column .content, .about .column .content {
     flex: initial;
     }
-
-    #consent-popup p {
-    font-size: calc(var(--font-normal) + 0.8rem);
-}
-
 .container-ajx {
    line-height: 1.2;
 }
@@ -1589,7 +1589,9 @@ h2 {
         font-size: 2.5rem;
       }
 
-
+    #consent-popup p {
+    font-size: calc(var(--font-normal) + 0.8rem);
+}
 }
 
 /* ==============================

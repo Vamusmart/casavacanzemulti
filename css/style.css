@@ -85,7 +85,7 @@ h1 {
 h2 {
   display: block;
   /* font-size: 1.15em; */
-font-size: calc(var(--font-normal) + 0.6rem);
+  font-size: calc(var(--font-normal) + 0.6rem);
   margin-block-end: 0.3em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
@@ -117,10 +117,6 @@ body {
   border: 0.1rem solid var(--white);
   font-weight: 100;
 }
-
-/* .button {
-  margin-right: 12em;
-} */
 
 form .btn:hover,
 #wedo .btn:hover,
@@ -227,11 +223,11 @@ header label {
 }
 
 .nav-links {
-      display: flex;
-    justify-content: space-around;
-    align-items: center; 
-    width: 50%;
-    height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  height: 100%;
 }
 
 .nav-links li {
@@ -340,6 +336,7 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 9999;
 }
 
 #consent-popup p {
@@ -348,7 +345,8 @@ a.active {
 }
 
 .item {
-  position: static; /* 🔥 fondamentale */
+  position: static;
+  /* 🔥 fondamentale */
   width: auto;
   margin-left: 1rem;
 }
@@ -374,6 +372,7 @@ a.active {
 .wrapper {
   position: fixed;
   width: 80%;
+  z-index: 9999;
 }
 
 /* #consent-popup p {
@@ -562,7 +561,7 @@ a.active {
 
 .card .box-container {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
@@ -577,6 +576,9 @@ a.active {
   border-radius: 0.1rem;
   text-align: center;
   margin-bottom: 3rem;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .card .box-container .box .btn {
@@ -584,9 +586,10 @@ a.active {
 }
 
 .card .box-container .box .box-text {
-  margin: 7rem;
-/*   line-height: 2.5rem;
- */  height: auto;
+  flex-grow: 1;
+  margin: 2rem;
+  /*   line-height: 2.5rem;
+   height: auto;*/
 }
 
 .card .box-container .box .box-pic img {
@@ -596,8 +599,9 @@ a.active {
 }
 
 .box-pic {
+  position: relative;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 
 .box-pic::after {
@@ -656,6 +660,9 @@ img {
 }
 
 #wedo .buttons {
+  position: relative;
+  /* Aggiunto solo perchè c'è z-index*/
+
   border: 1rem;
   z-index: 1000;
   margin-right: 10rem;
@@ -1002,10 +1009,10 @@ input #phone {
     font-size: var(--font-normal);
   }
 
-    #wedo .column .image,
-.about .column .image {
-  width: 70%;
-}
+  #wedo .column .image,
+  .about .column .image {
+    width: 70%;
+  }
 
   .contact .column .heading {
     padding-right: 0;
@@ -1075,7 +1082,7 @@ input #phone {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-    .nav-links a {
+  .nav-links a {
     font-size: calc(var(--font-large) + 0.4rem);
     letter-spacing: 1px;
     color: var(--lightblue);
@@ -1109,26 +1116,28 @@ input #phone {
     font-size: 40%;
   }
 
-     #wedo .column .content, .about .column .content {
+  #wedo .column .content,
+  .about .column .content {
     flex: initial;
-    }
+  }
+
   .text {
     /* color: red; */
   }
 
-  
-h2 {
+
+  h2 {
     font-size: calc(var(--font-normal) + 0.1rem);
-}
+  }
 
   .about .column {
     padding: 0;
   }
 
-    #wedo .column .image,
-.about .column .image {
-  width: 70%;
-}
+  #wedo .column .image,
+  .about .column .image {
+    width: 70%;
+  }
 
   section {
     padding: 0 0%;
@@ -1176,9 +1185,9 @@ h2 {
     height: 57rem;
   }
 
-          .card .box-container {
+  .card .box-container {
     align-items: initial;
-}
+  }
 }
 
 /* ==============================
@@ -1189,10 +1198,11 @@ h2 {
 /* Base mobile: fino a 765px */
 @media (max-width: 765px) {
   html {
-/*     font-size: 28%;
- */  }
+    /*     font-size: 28%;
+ */
+  }
 
- 
+
 
   /* Layout generale */
   .about .column .content p {
@@ -1204,10 +1214,10 @@ h2 {
     padding: 0 2rem 2rem 2rem;
   }
 
-    #wedo .column .image,
-.about .column .image {
-  width: 74%;
-}
+  #wedo .column .image,
+  .about .column .image {
+    width: 74%;
+  }
 
   .buttons {
     margin-left: 2rem;
@@ -1307,9 +1317,9 @@ h2 {
   }
 
   #wedo .column .image,
-.about .column .image {
-  width: 68%;
-}
+  .about .column .image {
+    width: 68%;
+  }
 
   .home .content p,
   .home .content .text p {
@@ -1320,26 +1330,27 @@ h2 {
 
 @media (max-width: 480px) {
   html {
-/*     font-size: 50%;
- */  }
+    /*     font-size: 50%;
+ */
+  }
 
   .text {
     text-align: center;
     width: fit-content;
   }
 
-      h2 {
-        font-size: calc(var(--font-normal) + 1.2rem);
-    }
+  h2 {
+    font-size: calc(var(--font-normal) + 1.2rem);
+  }
 
   .card .box-container .box {
     flex: 1 1 28rem;
   }
 
-        .card .box-container {
+  .card .box-container {
     padding: 6rem;
-    
-}
+
+  }
 
   .about .column .heading {
     padding-left: 0;
@@ -1350,7 +1361,7 @@ h2 {
     margin-top: 6rem;
   }
 
-/*   .box-circles {
+  /*   .box-circles {
     display: none;
   }
  */
@@ -1395,8 +1406,9 @@ h2 {
     max-width: 90%;
     padding: 0.5rem;
     background-color: var(--white);
-/*     padding-bottom: 12rem;
- */    font-size: var(--font-normal);
+    /*     padding-bottom: 12rem;
+ */
+    font-size: var(--font-normal);
   }
 
   .flex-ajx {
@@ -1465,8 +1477,9 @@ h2 {
 --------------------------------*/
 @media (max-width: 375px) {
   html {
-/*     font-size: 50%;
- */  }
+    /*     font-size: 50%;
+ */
+  }
 
   .mySlides img {
     min-height: 92%;
@@ -1494,8 +1507,9 @@ h2 {
   }
 
   .home .content p {
-/*     font-size: calc(var(--font-normal) + 0.4rem);
- */  }
+    /*     font-size: calc(var(--font-normal) + 0.4rem);
+ */
+  }
 
   #load-1,
   #load-2,
@@ -1517,8 +1531,9 @@ h2 {
 --------------------------------*/
 @media (max-width: 320px) {
   html {
-/*     font-size: 40%;
- */  }
+    /*     font-size: 40%;
+ */
+  }
 
   .contact .column .heading {
     padding-left: 3rem;
@@ -1532,7 +1547,7 @@ h2 {
     margin-left: 17rem;
   }
 
- /*  #accept {
+  /*  #accept {
   } */
 
   .card .box-container {
@@ -1561,37 +1576,40 @@ h2 {
   .home .content p {
     font-size: calc(var(--font-normal) + 1rem);
   }
-  
+
   .card .box-container .box .box-pic img {
     height: 70rem;
-    }
+  }
 
-    .about .column .content p {
+  .about .column .content p {
     font-size: calc(var(--font-normal) + 0.5rem);
-    }
+  }
 
-    h2 {
+  h2 {
     font-size: calc(var(--font-normal) + 0.6rem);
-    }
+  }
 
-    #wedo .column .content, .about .column .content {
+  #wedo .column .content,
+  .about .column .content {
     flex: initial;
-    }
-.container-ajx {
-   line-height: 1.2;
-}
+  }
 
-.login .input {
+  .container-ajx {
+    line-height: 1.2;
+  }
+
+  .login .input {
     font-size: 2.5rem;
-}
+  }
 
-    .input, .msg .area {
-        font-size: 2.5rem;
-      }
+  .input,
+  .msg .area {
+    font-size: 2.5rem;
+  }
 
-    #consent-popup p {
+  #consent-popup p {
     font-size: calc(var(--font-normal) + 0.8rem);
-}
+  }
 }
 
 /* ==============================

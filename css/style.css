@@ -315,6 +315,7 @@ a.active {
 #consent-popup p {
   width: auto;
   flex: 1;
+  font-size: calc(var(--font-normal) + 0.2rem);
 }
 
 .item {
@@ -1481,7 +1482,7 @@ input #phone {
   }
 
   .home .content p {
-    font-size: calc(var(--font-normal) + 1rem);
+    font-size: calc(var(--font-normal) + 0.6rem);
   }
 
   .card .box-container .box .box-pic img {
@@ -1491,10 +1492,13 @@ input #phone {
   .about .column .content p {
     font-size: calc(var(--font-normal) + 0.5rem);
   }
+.about .column .heading {
+  font-size: calc(var(--font-large) + 1.5rem);
+}
 
-  h2 {
-    font-size: calc(var(--font-normal) + 0.6rem);
-  }
+h2 {
+  font-size: calc(var(--font-normal) + 0.6rem);
+}
 
   #wedo .column .content,
   .about .column .content {
